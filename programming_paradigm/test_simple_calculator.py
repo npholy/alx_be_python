@@ -21,10 +21,10 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.subtract(5, 3), 2, "5 - 3 should equal 2")
         self.assertEqual(self.calc.subtract(-1, 1), -2, "-1 - 1 should equal -2")
         self.assertEqual(self.calc.subtract(0, 0), 0, "0 - 0 should equal 0")
-        self.assertEqual(self.calc.subtract(-5, -3), -2, "-5 - -3 should equal -2")
+        self.assertEqual(self.calc.subtract(-5, -3), -2, "-5 + -3 should equal -2")
         self.assertEqual(self.calc.subtract(5.5, 2.5), 3.0, "5.5 - 2.5 should equal 3.0")
 
-    def test_multiply(self):
+    def test_multiplication(self):
         """Test the multiply method with various inputs."""
         self.assertEqual(self.calc.multiply(2, 3), 6, "2 * 3 should equal 6")
         self.assertEqual(self.calc.multiply(-2, 3), -6, "-2 * 3 should equal -6")
@@ -40,6 +40,7 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(5, -2), -2.5, "5 / -2 should equal -2.5")
         self.assertEqual(self.calc.divide(2.5, 0.5), 5.0, "2.5 / 0.5 should equal 5.0")
         self.assertIsNone(self.calc.divide(10, 0), "10 / 0 should return None")
+        self.assertIsNone(self.calc.divide(0, 0), "0 / 0 should return None")
 
 if __name__ == '__main__':
     unittest.main()
